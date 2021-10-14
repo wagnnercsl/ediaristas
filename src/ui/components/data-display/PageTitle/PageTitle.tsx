@@ -1,0 +1,25 @@
+import React from 'react';
+import { PageSubititleStyled, PageTitleContainer, PageTitleStyled } from './PageTitle.style';
+
+interface PageTitleProps {
+    title: string;
+    subtitle: string | JSX.Element;
+}
+
+const PageTitle: React.FC<PageTitleProps> = (props) => {
+    return (
+        <PageTitleContainer>
+            <PageTitleStyled>
+                {props.title}
+            </PageTitleStyled>
+
+            <PageSubititleStyled>
+                {props.subtitle}
+            </PageSubititleStyled>
+
+            {props.children}
+        </PageTitleContainer>
+    );
+}
+
+export default PageTitle;
